@@ -1,3 +1,16 @@
+let cycle = 0
+
+class Person {
+    constructor(first,last,age) {
+        this.firstName = first
+        this.lastName = last
+        this.gender = 
+        this.age = age
+        this.dob = cycle
+    }
+}
+
+
 let world = {
     time: {
         year: 0,
@@ -5,9 +18,13 @@ let world = {
         week: 0,
         day: 0
     },
+    space: {
+        people: [
+            new Person("Alex", "Decker", 20),
+            new Person("Emily", "Gray", 20)
+        ]
+    }
 }
-
-let cycle = 0
 
 const handleTime = () => {
     world.time.day++
@@ -31,8 +48,8 @@ const handleTime = () => {
 
 const updateWorld = () => {
     handleTime()
-    console.log("the world looks like:")
-    console.log(world)
+    console.log(world.time)
+    console.log(world.space.people)
 }
 
 const mainLoop = () => {
